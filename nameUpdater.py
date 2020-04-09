@@ -43,14 +43,17 @@ def findCorrectName(name):
 with open(INPUT_FILE, 'r') as inpt, open(OUTPUT_FILE, 'w') as outpt:
     displayOptions()
     
+    terminateMode = False
+    
     inptLine = inpt.readline()
     while inptLine != '':
-        if '"name"' in inptLine:
+        if '"name"' in inptLine and not terminateMode:
             splitList = inptLine.split('"')
             currentName = splitList[3]
             newName = findCorrectName(currentName)
             if newName=='quit':
-                break
+                terminateMode = True
+                continue
             splitList[3] = newName
             newLine = '"'.join(splitList)
             outpt.write(newLine)

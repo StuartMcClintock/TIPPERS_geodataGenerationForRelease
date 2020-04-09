@@ -292,7 +292,7 @@
     }
   },
   {
-    "name": "Public Services Building",
+    "name": "Public Services",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -394,7 +394,7 @@
     }
   },
   {
-    "name": "Cross Cultural Center",
+    "name": "Cross-Cultural Center",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1069,7 +1069,7 @@
     }
   },
   {
-    "name": "Information and Computer Science 2",
+    "name": "Information & Computer Science 2",
     "entityTypeId": 5,
     "payload": {
       "geo": {
