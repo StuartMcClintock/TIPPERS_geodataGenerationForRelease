@@ -292,7 +292,7 @@
     }
   },
   {
-    "name": "Public Services",
+    "name": "Public Services Building",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -394,7 +394,7 @@
     }
   },
   {
-    "name": "Cross-Cultural Center",
+    "name": "Cross Cultural Center",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1069,7 +1069,7 @@
     }
   },
   {
-    "name": "Information & Computer Science 2",
+    "name": "Information and Computer Science 2",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1292,7 +1292,7 @@
     }
   },
   {
-    "name": "Music & Media Building",
+    "name": "Music and Media Building",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1490,7 +1490,7 @@
     }
   },
   {
-    "name": "Phoenix Food Court",
+    "name": "Phoenix Grill",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1608,7 +1608,7 @@
     }
   },
   {
-    "name": "Frederick Reines Hall",
+    "name": "Reines Hall",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1862,7 +1862,7 @@
     }
   },
   {
-    "name": "Howard Schneiderman Lecture Hall",
+    "name": "Schneiderman Lecture Hall",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -1936,7 +1936,7 @@
     }
   },
   {
-    "name": "Social Science Laboratory",
+    "name": "Social Science Lab",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -2365,7 +2365,7 @@
     }
   },
   {
-    "name": "Engineering & Computing Trailer",
+    "name": "Engineering and Computing Trailer",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -3016,7 +3016,7 @@
     }
   },
   {
-    "name": "Disability Services Center",
+    "name": "Disability Services",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -3201,7 +3201,7 @@
     }
   },
   {
-    "name": "Interim Classroom Facility",
+    "name": "Interim Classroom",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -3556,7 +3556,7 @@
     }
   },
   {
-    "name": "Disability Services Center",
+    "name": "Disability Services",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -4066,7 +4066,7 @@
     }
   },
   {
-    "name": "Donald Bren Hall",
+    "name": "Bren Hall",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -4830,7 +4830,7 @@
     }
   },
   {
-    "name": "Calif. Inst. for Telecom. & Info. Tech.",
+    "name": "California Institute for Telecommunications and Information Technology",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -5040,7 +5040,7 @@
     }
   },
   {
-    "name": "Multipurpose Science & Technology Bldg.",
+    "name": "Multipurpose Science and Technology Building",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -5303,7 +5303,7 @@
     }
   },
   {
-    "name": "Administrative Modular",
+    "name": "Administrative Modulars",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -5414,7 +5414,7 @@
     }
   },
   {
-    "name": "Building Services Bldg.",
+    "name": "Building Services Building",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -5451,7 +5451,7 @@
     }
   },
   {
-    "name": "Anteater Instruction & Research Building",
+    "name": "Anteater Instruction and Research Building (AIRB)",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -6227,7 +6227,7 @@
     }
   },
   {
-    "name": "Social & Behavioral Sciences Gateway",
+    "name": "Social and Behavioral Sciences Gateway",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -7080,7 +7080,7 @@
     }
   },
   {
-    "name": "pippin",
+    "name": "Pippin Commons",
     "entityTypeId": 5,
     "payload": {
       "geo": {
@@ -7400,7 +7400,7 @@
     }
   },
   {
-    "name": "Multipurpose Academic & Administrative Bldg.",
+    "name": "Multipurpose Academic and Administrative Building",
     "entityTypeId": 5,
     "payload": {
       "geo": {
