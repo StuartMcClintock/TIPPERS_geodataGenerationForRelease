@@ -2,7 +2,7 @@ import sqlite3
 from buildDB import SPACETABLENAME
 
 INPUT_FILE = 'buildingDataOriginal.json'
-OUTPUT_FILE  = 'buildingDataNew.json'
+OUTPUT_FILE  = 'buildingDataUpdated.json'
 
 def displayOptions():
     con = sqlite3.connect('spaces.db')
