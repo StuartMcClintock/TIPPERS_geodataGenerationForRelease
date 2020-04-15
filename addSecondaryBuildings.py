@@ -3,6 +3,7 @@ import sqlite3
 from buildDB import SPACETABLENAME
 
 FILENAME = 'buildingDataComplete.json'
+BUILDING_ID = 5
 
 def removeExtraData(building):
     rmKeys = ["id", "entityClassId", "entityClassName", "entityTypeName"]
@@ -43,6 +44,21 @@ def addNewFromJSON(data):
         
     
 def addNewFromDB(data):
+    currentNames = []
+    for building in data:
+        currentNames.append(building["name"])
+
+    con = sqlite3.connect('spaces.db')
+    cursor = con.cursor()
+    cursor.execute('SELECT * FROM '+SPACETABLENAME+" WHERE space_type='Building';")
+    dbBuildings = cursor.fetchall()
+    con.close()
+    for building in dbBuildings:
+        if not building[1] in currentNames:
+            newBuilding = {}
+            newBuilding["name"] = building[1]
+            newBuilding["entityTypeId"] = BUILDING_ID
+            data.append(newBuilding)
     return data
 
 def main():
