@@ -2,8 +2,7 @@ import sqlite3
 import json
 from buildDB import SPACETABLENAME
 
-INPUT_FILE = 'buildingDataUpdated.json'
-OUTPUT_FILE  = 'buildingDataComplete.json'
+FILENAME  = 'buildingDataComplete.json'
 
 def removeUnnamed(buildingInfo):
     con = sqlite3.connect('spaces.db')
@@ -26,9 +25,13 @@ def removeUnnamed(buildingInfo):
         
     return buildingInfo
 
-with open(INPUT_FILE, 'r') as inF, open(OUTPUT_FILE, 'w') as outF:
-    oldBuildings = json.loads(inF.read())
-    buildingInfo = removeUnnamed(oldBuildings)
-    json.dump(buildingInfo, outF)
-    
-    
+def main():
+    with open(FILENAME, 'r') as inF:
+        oldBuildings = json.loads(inF.read())
+        buildingInfo = removeUnnamed(oldBuildings)
+    with open(FILENAME, 'w') as outF:
+        json.dump(buildingInfo, outF)
+        
+
+if (__name__=='__main__'):
+    main()
