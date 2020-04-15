@@ -12,8 +12,8 @@
     "name": "University of California, Irvine",
     "entityClassId": 2,
     "entityClassName": "space",
-    "entityTypeId": 5,
-    "entityTypeName": "building",
+    "entityTypeId": 4,
+    "entityTypeName": "campus",
     "payload": {
       "geo": {
         "extent": {

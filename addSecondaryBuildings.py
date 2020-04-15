@@ -13,19 +13,31 @@ def removeExtraData(building):
             pass
     return building
 
+def convertGPS(verticies):
+    newVerticies = []
+    for point in verticies:
+        point['latitude'] = float(point['latitude'])
+        point['longitude'] = float(point['longitude'])
+        newVerticies.append(point)
+    return newVerticies
+
 def addNewFromJSON(data):
     with open('additionalBuildings.json', 'r') as newBuildingFile:
-        newBuildings = json.load(newBuildingFile)
+        newEntities = json.load(newBuildingFile)
     
     currentNames = []
     for building in data:
         currentNames.append(building["name"])
     
-    for building in newBuildings:
-        if not building["name"] in currentNames:
-            currentNames.append(building["name"])
-            building = removeExtraData(building)
-            data.append(building)
+    for entity in newEntities:
+        if not entity["name"] in currentNames and entity["entityTypeId"]==5:
+            currentNames.append(entity["name"])
+            entity = removeExtraData(entity)
+            try:
+                entity['payload']['geo']['extent']['verticies'] = convertGPS(building['payload']['geo']['extent']['verticies'])
+            except KeyError:
+                print('Encountered building without geodata. Proceeding without it...')
+            data.append(entity)
     
     return data
         
@@ -41,7 +53,6 @@ def main():
         
     with open(FILENAME, 'w') as outF:
         json.dump(data, outF)
-    print(type(data), data)
     
 if (__name__=='__main__'):
     main()
