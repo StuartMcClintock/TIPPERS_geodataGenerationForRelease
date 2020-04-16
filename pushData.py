@@ -18,4 +18,5 @@ for datum in data:
         print('POST request to add '+datum['name']+'...')
         print(requests.post(DEST_URL, json=datum))
     else:
-        print(datum['name']+' has already been posted.')
+        print(datum['name']+' has already been posted. Sending a PUT request to update...')
+        print(requests.put(DEST_URL, json=datum))
