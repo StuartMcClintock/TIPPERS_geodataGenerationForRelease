@@ -17,8 +17,9 @@ def main():
     con = sqlite3.connect('spaces.db')
     cursor = con.cursor()
     for name in apiIds.keys():
-        cursor.execute("UPDATE "+SPACETABLENAME+" SET apiId="+str(apiIds[name])+" WHERE space_name='"+name+"'")
-        print(name, "has been set to", apiIds[name])
+        command = "UPDATE "+SPACETABLENAME+" SET apiId="+str(apiIds[name])+" WHERE space_name='"+name+"';"
+        print(command)
+        cursor.execute(command)
     con.close()
     
 if __name__=='__main__':
