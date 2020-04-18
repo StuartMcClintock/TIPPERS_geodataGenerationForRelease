@@ -50,34 +50,30 @@ def buildEntityObjects():
     nameMap = {}
     for super in superData:
         try:
-            nameMap[(super[1], buildingIds[buildingNameMap[super[2]]])] = super[1]
+            nameMap[super[0]] = ('floor '+super[1], buildingIds[buildingNameMap[super[2]]])
         except KeyError:
-            print("error with superspace(floor) "+str(super[0]))
-    
-    print(nameMap)
-    print('------------------------')
-    print(idMap)
-    print('------------------------')
+            print("error with superspace "+str(super[0]))
     
     subObjects = []
     for subSpace in subData:
         newSubSpace = {}
         newSubSpace["name"] = "floor "+subSpace[1]
-        newSubSpace["entityTypeId"] = 7
+        newSubSpace["entityTypeId"] = ID_OF_DESIRED_OBJ_TYPE
         try:
             newSubSpace["payload"] = {"geo":{"parentSpaceId":idMap[nameMap[subSpace[2]]]}}
         except KeyError:
             continue
-        subObjects.append(newFloor)
+        subObjects.append(newSubSpace)
         
     return subObjects
 
 def main():
     data = buildEntityObjects()
-    #print(data)
-    #for datum in data:
-    #    print(datum["name"])
-    #    print(requests.post(DEST_URL, json=datum))
+    for i in data:
+        print(i)
+    for datum in data:
+        print(datum["name"])
+        print(requests.post(DEST_URL, json=datum))
     
 if (__name__=='__main__'):
     main()
