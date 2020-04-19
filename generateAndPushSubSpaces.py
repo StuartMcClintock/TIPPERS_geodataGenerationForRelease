@@ -9,8 +9,10 @@ SOURCE_URL = 'https://dev-tippers.ics.uci.edu/api/entity/'
 ID_OF_DESIRED_OBJ_TYPE = 7
 ID_OF_PARENT_OBJ = 5
 
+ELEMENT_LIMIT = 1000
+
 def getIdAndNameBuilding():
-    data = requests.get(SOURCE_URL).json()
+    data = requests.get(SOURCE_URL, params={"limit":ELEMENT_LIMIT}).json()
     nameDict = {}
     for datum in data:
         if datum["entityTypeId"] == ID_OF_PARENT_OBJ:
@@ -18,11 +20,12 @@ def getIdAndNameBuilding():
     return nameDict
 
 def getIdAndPair():
-    data = requests.get(SOURCE_URL).json()
+    data = requests.get(SOURCE_URL, params={"limit":ELEMENT_LIMIT}).json()
     nameDict = {}
     for datum in data:
         if datum["entityTypeId"] == ID_OF_DESIRED_OBJ_TYPE:
             nameDict[(datum["name"], datum["payload"]["geo"]["parentSpaceId"])] = datum["id"]
+            #print((datum["name"], datum["payload"]["geo"]["parentSpaceId"]))
     return nameDict
 
 def buildEntityObjects():
@@ -57,8 +60,8 @@ def buildEntityObjects():
     subObjects = []
     for subSpace in subData:
         newSubSpace = {}
-        newSubSpace["name"] = "floor "+subSpace[1]
-        newSubSpace["entityTypeId"] = ID_OF_DESIRED_OBJ_TYPE
+        newSubSpace["name"] = subSpace[1]
+        newSubSpace["entityTypeId"] = 12
         try:
             newSubSpace["payload"] = {"geo":{"parentSpaceId":idMap[nameMap[subSpace[2]]]}}
         except KeyError:
@@ -69,8 +72,6 @@ def buildEntityObjects():
 
 def main():
     data = buildEntityObjects()
-    for i in data:
-        print(i)
     for datum in data:
         print(datum["name"])
         print(requests.post(DEST_URL, json=datum))

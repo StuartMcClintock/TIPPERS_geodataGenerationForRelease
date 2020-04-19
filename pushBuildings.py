@@ -16,4 +16,9 @@ for ent in preexistingEntities:
 for datum in data:
     if not datum["name"] in takenNames:
         print('POST request to add '+datum['name']+'...')
-        print(requests.post(DEST_URL, json=datum))
+        try:
+            print(requests.post(DEST_URL, json=datum))
+        except:
+            newData = datum
+            newData["payload"] = {"geo":{"parentSpaceId":10000}}
+            print(requests.post(DEST_URL, json=newData))
